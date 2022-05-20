@@ -27,7 +27,7 @@ public:
 
 class GenerateBoard {
 public:
-  static Board  generate ();
+  static Board generate ();
 private:
   GenerateBoard() {};
 };
@@ -35,4 +35,3 @@ private:
 
 
 #endif //BOARDGENERATOR_H
-

@@ -6,8 +6,12 @@ Catan is fun game but the setup can take quite a while. So I wish to have a set 
 that I can simply click together in any order and have the game board ready to go.
 
 ## How To's
-Currently all it can do is print out the suggested starting board from the catan instructions.
-The following is the output of the command line.
+Currently a small test program exists. If the program is run just by
+creating a board then the board contains the default board. 
+
+If generate board is called then a randomly created board is generated.
+
+The following is the output of the command line print function.
 The plan is for this to be used during the development process.
 When reading a tile the first number is the asscociated dice number while the next two characters are the type of resource. 
 The resources are
@@ -20,6 +24,8 @@ SH = sheep
 DE = desert
 ```
 
+If the board is not generated randomly then the standard catan board is 
+used. Shown here:
 ```
               ____
              /    \
@@ -43,3 +49,4 @@ DE = desert
             \      /
              \____/
 			                     ```
+

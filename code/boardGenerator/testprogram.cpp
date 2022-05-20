@@ -1,6 +1,6 @@
 #include "boardGenerator.h"
 
 int main () {
-  Board b;
+  Board b = GenerateBoard::generate();
   b.printBoard();
 }
