@@ -15,6 +15,8 @@ void setup()
   FastLED.addLeds<NEOPIXEL, 3>(leds, NUM_LEDS);
 
 }
+
+
 void loop()
 {
   for (int i = 1; i < 100; i++) {
