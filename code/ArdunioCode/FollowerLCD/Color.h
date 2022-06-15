@@ -1,6 +1,8 @@
 #ifndef COLOR_H
 #define COLOR_H
 
+// 16 bit color
+
 #define WHITE         0xFFFF
 #define BLACK         0x0000    
 #define BLUE          0x001F  
@@ -22,6 +24,5 @@
 #define LGRAY         0XC618 
 #define LGRAYBLUE     0XA651
 #define LBBLUE        0X2B12 
-#define IRONGRAY      0X7B8EB9
 
 #endif // COLOR_H
