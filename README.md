@@ -1,9 +1,17 @@
 # BetterSettlersBoard
 The goal of the project is to create a "digital" version of the hexagons used in settlers of catan. 
 
+A proof of concept hexagon:
+
+<img src="docs/images/CatanHexagon.jpeg" alt="drawing" width="200"/>
+
+
 ## Why?
 Catan is fun game but the setup can take quite a while. So I wish to have a set of digital hexagons
 that I can simply click together in any order and have the game board ready to go.
+
+# About the Hexagon
+The hexagons are mostly self organizing. Aside from the leader the tiles can be connected in any order. The leader will generate the board an will then communicate to all the other tiles their number and tile type. 
 
 ## How To's
 Currently a small test program exists. If the program is run just by
