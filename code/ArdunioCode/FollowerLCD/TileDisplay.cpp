@@ -43,6 +43,22 @@ void Tile::DisplayTile(uint16_t color, int number){
   uint16_t num_color = WHITE;
   if (number == 8 || number == 6) {
     num_color = MAGENTA;
+  } else if (number > 0){
+     lcd_display_->DrawNumCentered(number, num_color);
   }
-  lcd_display_->DrawNumCentered(number, num_color);
+}
+
+void Tile::DisplayTileNoNumber(uint16_t color){
+  lcd_display_->FillScreen(color);
+  unsigned int r, g, b;
+  Color16BitToRGB(color, r, g, b);
+  
+  for (int i = 0; i < num_leds_; i++){
+    leds_[i].r = r;
+    leds_[i].g = g;
+    leds_[i].b = b;
+  }
+  //brightness 0 - 255
+  FastLED.show(50);
+  
 }

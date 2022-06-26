@@ -1,5 +1,5 @@
-#ifndef BOARDSETUP_H
-#define BOARDSETUP_H
+#ifndef TILEDISPLAY_H
+#define TILEDISPLAY_H
 
 #include "LCD_Display.h"
 #include <FastLED.h>
@@ -15,7 +15,8 @@ private:
 public:
   Tile(LCD* lcd, int num_leds);
   void DisplayTile(uint16_t color, int number);
+  void DisplayTileNoNumber(uint16_t color);
 };
 
 
-#endif // BOARDSETUP_H
+#endif //TILEDISPLAY_H
