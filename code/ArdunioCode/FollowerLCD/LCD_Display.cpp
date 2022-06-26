@@ -1,11 +1,13 @@
 #include "LCD_Display.h"
 #include "font.h"
+#include "Color.h"
 
 LCD::LCD(int cs, int dc, int rst, int bl, int height, int width, const NumberFont* font) : cs_pin_{cs}, dc_pin_{dc}, rst_pin_{rst}, bl_pin_{bl}, height_{height}, width_{width} {
   font_ = font;
   ConfigureGPIO();
   ConfigureComunication();
   ConfigureScreen();
+  FillScreen(BLACK);
 }
 
 void LCD::ConfigureGPIO(){

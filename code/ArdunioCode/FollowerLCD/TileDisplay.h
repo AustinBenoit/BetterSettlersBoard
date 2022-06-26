@@ -4,7 +4,7 @@
 #include "LCD_Display.h"
 #include <FastLED.h>
 
-#define LEDS_PIN 3
+#define LEDS_PIN 2
 
 class Tile {
 private:
@@ -17,6 +17,5 @@ public:
   void DisplayTile(uint16_t color, int number);
   void DisplayTileNoNumber(uint16_t color);
 };
-
 
 #endif //TILEDISPLAY_H

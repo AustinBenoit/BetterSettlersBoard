@@ -14,7 +14,7 @@ void Tile::Color16BitToRGB (uint16_t color16, unsigned int& r, unsigned int& g, 
 
 Tile::Tile(LCD* lcd, int num_leds) : lcd_display_{lcd}, num_leds_{num_leds} {
   leds_ = new CRGB[num_leds_];
-  FastLED.addLeds<NEOPIXEL,  3>(leds_, num_leds_);
+  FastLED.addLeds<NEOPIXEL, LEDS_PIN>(leds_, num_leds_);
   // Clear everything out
   lcd_display_->FillScreen(BLACK);
 
