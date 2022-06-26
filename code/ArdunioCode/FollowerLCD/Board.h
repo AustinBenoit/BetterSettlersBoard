@@ -4,7 +4,7 @@
 #include "Color.h"
 #include <stdint.h>
 
-enum TileType { wood, clay, sheep, iron, wheat, desert };
+enum TileType { wood = 0, clay = 1, sheep = 2, iron = 3, wheat = 4, desert = 5 };
 
 const uint16_t TileTypeColor[] {
     [wood] = DARKGREEN, [clay] = BRRED,  [sheep] = GREEN,
@@ -87,6 +87,8 @@ private:
   
 public:
   void SetTile(int tile_pos, int number, TileType tt);
+  void SetTileType(int tile_pos, TileType tt);
+  void SetTileNumber(int tile_pos, int number);
   void RandomizeBoard();
   int GetTileNumber(int tile);
   TileType GetTileType(int tile_pos);
