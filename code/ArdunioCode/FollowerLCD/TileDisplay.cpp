@@ -43,6 +43,7 @@ void Tile::DisplayTile(uint16_t color, int number){
   uint16_t num_color = WHITE;
   if (number == 8 || number == 6) {
     num_color = MAGENTA;
+    lcd_display_->DrawNumCentered(number, num_color);
   } else if (number > 0){
      lcd_display_->DrawNumCentered(number, num_color);
   }
@@ -60,5 +61,4 @@ void Tile::DisplayTileNoNumber(uint16_t color){
   }
   //brightness 0 - 255
   FastLED.show(50);
-  
 }

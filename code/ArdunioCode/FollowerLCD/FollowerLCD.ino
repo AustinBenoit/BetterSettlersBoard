@@ -22,7 +22,6 @@
 TileRunner* tr;
 
 void setup() {
-
   Tile* tile = new Tile(new LCD(DISP_CS, DISP_RST, DISP_DC, DISP_BL, 240, 240, Numbers_Font), NUM_LEDS);
   Board* board = new Board;
 
@@ -31,7 +30,7 @@ void setup() {
   // draw out your current tile
   // If root do the first hand off!
   if (ROOT_NODE) {
-    delay(100); // just for the asectic
+    //delay(5000); // just for the asectic
     tr->SetIndex(0);
     tr->DisplayCurrentIndexTile();
     // comunnicate
@@ -40,4 +39,9 @@ void setup() {
 
 int found_side = 0;
 void loop() {
+  for (int i = 0; i < 19; i++){
+    tr->SetIndex(i);
+    tr->DisplayCurrentIndexTile();
+    delay(3000);
+  }
 }
