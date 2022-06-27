@@ -1,7 +1,6 @@
 #include <SPI.h>
 
 #include "TileDisplay.h"
-#include "Organize.h"
 #include "Color.h"
 #include "Board.h"
 #include "TileRunner.h"
@@ -33,6 +32,7 @@ void setup() {
     //delay(5000); // just for the asectic
     tr->SetIndex(0);
     tr->DisplayCurrentIndexTile();
+    tr->SendBoard(0);
     // comunnicate
   }
 }
