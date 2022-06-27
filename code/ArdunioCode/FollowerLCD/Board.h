@@ -86,6 +86,7 @@ private:
   };
   
 public:
+  const int number_tiles_ = 19;
   void SetTile(int tile_pos, int number, TileType tt);
   void SetTileType(int tile_pos, TileType tt);
   void SetTileNumber(int tile_pos, int number);
