@@ -2,7 +2,7 @@
 #include "font.h"
 #include "Color.h"
 
-LCD::LCD(int cs, int dc, int rst, int bl, int height, int width, const NumberFont* font) : cs_pin_{cs}, dc_pin_{dc}, rst_pin_{rst}, bl_pin_{bl}, height_{height}, width_{width} {
+LCD::LCD(int cs, int dc, int rst, int height, int width, const NumberFont* font) : cs_pin_{cs}, dc_pin_{dc}, rst_pin_{rst}, height_{height}, width_{width} {
   font_ = font;
   ConfigureGPIO();
   ConfigureComunication();
@@ -14,8 +14,6 @@ void LCD::ConfigureGPIO(){
   pinMode(cs_pin_, OUTPUT);
   pinMode(rst_pin_, OUTPUT);
   pinMode(dc_pin_, OUTPUT);
-  pinMode(bl_pin_, OUTPUT);
-  analogWrite(bl_pin_, 255);
 }
 
 void LCD::ConfigureComunication(){

@@ -9,7 +9,7 @@
 
 class LCD {
 private:
-  int cs_pin_, dc_pin_, rst_pin_, bl_pin_;
+  int cs_pin_, dc_pin_, rst_pin_;
   int height_, width_;
   int bl_brightness = 140;
   const NumberFont* font_;
@@ -27,11 +27,12 @@ private:
   void ResetScreen();
 
 public:
-  LCD (int cs, int dc, int st, int bl, int height, int width, const NumberFont* font);
+  LCD (int cs, int dc, int st, int height, int width, const NumberFont* font);
   
   void ClearScreen();
   
   void DrawPixel(uint16_t x_point, uint16_t y_point, uint16_t color);
+
   /* DrawNum
    * Draws one number anywhere on the screen.
    */

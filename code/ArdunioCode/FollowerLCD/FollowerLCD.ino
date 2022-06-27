@@ -15,14 +15,14 @@
 #define DISP_CS 10
 #define DISP_RST 7
 #define DISP_DC 8
-#define DISP_BL 9
+
 // Note this is just a reminder pin 11 and pin 13 are used by the display!
 #define NUM_SIDES  6
 
 TileRunner* tr;
 
 void setup() {
-  Tile* tile = new Tile(new LCD(DISP_CS, DISP_RST, DISP_DC, DISP_BL, 240, 240, Numbers_Font), NUM_LEDS);
+  Tile* tile = new Tile(new LCD(DISP_CS, DISP_RST, DISP_DC, 240, 240, Numbers_Font), NUM_LEDS);
   Board* board = new Board;
 
   tr = new TileRunner(tile, board);
