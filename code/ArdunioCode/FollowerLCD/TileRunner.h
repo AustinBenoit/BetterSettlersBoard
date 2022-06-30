@@ -6,19 +6,18 @@
 
 class TileRunner {
 private:
-  int sending_board_addr_ = 50;
-  int getting_board_addr_ = 51;
+  const static int sending_board_addr_ = 50;
+  const static int getting_board_addr_ = 51;
   // TODO This should be set and not a static const 
-  int output_side_pin_[6] = {3, 4, 5, 6, 9, 12}; 
-  int input_side_pin_[6] = {A0, A1, A2, A3, A6, A7};
+  int* output_side_pin_;
+  int* input_side_pin_;
   const int number_sides_ = 6;
 
   static int index_;
   Tile* tile_;
   static Board* board_;
+  
   volatile static bool sending_data_;
-
-  static int GetNextOutputSide(int input_side);
 
   /*
    * 1 : send back index
@@ -31,16 +30,20 @@ private:
   static void SendOnRequestIndex();
   static void SendOnRequestTileTypes();
   static void SendOnRequestTileNumbers();
+  static void ResetBoard();
 
 public:
-  TileRunner(Tile* tile, Board* board);
-  void UpdateBoard(int side);
+  volatile static bool send_new_board_;
+  TileRunner(Tile* tile, Board* board, int* output_sides, int* input_sides);
+
+  int GetNextOutputSide(int input_side);
+  void UpdateBoard();
   void SendBoard(int side);
   int PollSides();
   void DisplayCurrentIndexTile();
   void SetIndex(int index);
+  int GetIndex();
+  void SerialPrintBoard();
+  void ConfigureRestBoard(int reset_pin);
 };
-
-
-
 #endif
