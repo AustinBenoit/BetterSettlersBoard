@@ -1,5 +1,6 @@
 #include "Board.h"  
-  
+#include "Arduino.h"
+
 int Board::GetTileNumber(int tile_pos) {
   return numbers_[tile_pos];
   }
@@ -24,4 +25,39 @@ void Board::SetTileNumber(int tile_pos, int number){
 void Board::SetTile(int tile_pos, int number, TileType tt){
   SetTileNumber(tile_pos, number);
   SetTileType(tile_pos, tt);
+}
+
+void Board::RandomizeBoard(){
+  randomize_numbers();
+  randomize_tile_types();
+}
+
+void Board::swap_ints(volatile int* a, volatile int* b){
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void Board::swap_tile_types(volatile TileType* a, volatile TileType* b) {
+  TileType temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void Board::randomize_numbers() {
+  for (int k = 0; k < random(0, 100); k++) {
+    for (int i = number_tiles_-1; i > 0; i--) {
+        long j = random(0, number_tiles_);
+        swap_ints(&numbers_[i], &numbers_[j]);
+    }
+  }
+}
+
+void Board::randomize_tile_types() {
+  for (int k = 0; k < random(0, 100); k++) {
+    for (int i = number_tiles_-1; i > 0; i--) {
+        long j = random(0, number_tiles_);
+        swap_tile_types(&tts_[i], &tts_[j]);
+    }
+  }
 }

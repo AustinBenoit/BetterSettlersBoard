@@ -41,7 +41,7 @@ private:
   // Each slot holds the number and the tile type
 
   // The inital Starting board represent the games suggested starting board
-  int numbers_[19] = {
+  volatile int numbers_[19] = {
     5,
     8,
     9,
@@ -63,7 +63,7 @@ private:
     9
   };
   
-  TileType tts_[19] = {
+  volatile TileType tts_[19] = {
     TileType::clay,
     TileType::wood,
     TileType::wheat,
@@ -84,6 +84,11 @@ private:
     TileType::clay,
     TileType::wood
   };
+
+  void randomize_numbers();
+  void randomize_tile_types();
+  void swap_ints(volatile int* a, volatile int* b);
+  void swap_tile_types(volatile TileType* a, volatile TileType* b);
   
 public:
   const int number_tiles_ = 19;
